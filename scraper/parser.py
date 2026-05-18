@@ -1,3 +1,14 @@
+'''
+parser.py
+author: Jernskegg
+
+This module parses raw shipment tracking data into
+structured shipment model objects.
+
+It extracts sender, receiver, package, and event details
+from the raw API response.
+'''
+
 from models import (
     ShipmentTracking,
     Party,

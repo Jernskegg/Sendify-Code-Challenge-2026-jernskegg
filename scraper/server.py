@@ -1,3 +1,16 @@
+'''
+server.py
+author: Jernskegg
+
+This module defines the server-side logic for
+retrieving and processing shipment tracking information.
+
+It includes an asynchronous function to fetch raw tracking data,
+parse it, and return a structured ShipmentTracking object.
+
+The main block demonstrates how to use this function with
+a sample reference number.
+'''
 from models import (
     ShipmentTracking,
     Party,

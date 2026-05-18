@@ -1,3 +1,14 @@
+'''
+models.py
+author: Jernskegg
+
+This module defines the data models used to represent
+shipment tracking information.
+
+It includes structured classes for parties, packages,
+tracking events, and the full shipment response.
+'''
+
 from pydantic import BaseModel
 
 

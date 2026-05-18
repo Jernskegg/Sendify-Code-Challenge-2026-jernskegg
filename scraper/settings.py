@@ -1,10 +1,12 @@
 '''
 settings.py
-Author: Jernskegg
-Date: 2026-05-17
+author: Jernskegg
 
-This file is for setting environment variables used in the code.
-You can also use it to set other configuration options if needed.
+This module defines configuration values used by the
+shipment tracking scraper.
+
+It reads environment variables for the tracking URL,
+headless mode, motion settings, and request timeout.
 '''
 
 import os
