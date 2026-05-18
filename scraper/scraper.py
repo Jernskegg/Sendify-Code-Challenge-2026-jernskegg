@@ -120,7 +120,7 @@ async def process_start(ref_arr):
 
         output_dir = Path("output/")
         output_dir.mkdir(parents=True, exist_ok=True)
-        await save_json("results.json", results, Path("output"))
+        return results
 
 
 if __name__ == "__main__":
