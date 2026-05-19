@@ -11,13 +11,13 @@ parse it, and return a structured ShipmentTracking object.
 The main block demonstrates how to use this function with
 a sample reference number.
 '''
-from models import (
+from tracker_tool.models import (
     ShipmentTracking,
     Party,
     ShipmentPackage,
 )
-from parser import parse_tracking_data
-from scraper import process_start  # type: ignore
+from tracker_tool.parser import parse_tracking_data
+from tracker_tool.scraper import process_start  # type: ignore
 
 
 async def get_shipment(reference_number: str) -> ShipmentTracking:

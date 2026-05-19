@@ -1,10 +1,11 @@
 import asyncio
 import json
 import os  # noqa: F401
-import settings
 from pathlib import Path
 
 from playwright.async_api import async_playwright
+
+import tracker_tool.settings as settings
 
 
 async def save_json(filename: str, data: dict, output_dir: Path):

@@ -9,7 +9,7 @@ It extracts sender, receiver, package, and event details
 from the raw API response.
 '''
 
-from models import (
+from tracker_tool.models import (
     ShipmentTracking,
     Party,
     Measurement,
