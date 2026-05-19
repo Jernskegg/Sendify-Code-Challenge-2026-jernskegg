@@ -6,23 +6,6 @@ from pathlib import Path
 
 from playwright.async_api import async_playwright
 
-# REFERENCE_NUMBER = "1806290829"
-REFERENCE_NUMBERS = [
-    "3476472018",
-    "1806264568",  # WILL FAIL - NOT FOUND
-    "3476265230",
-    "3476265248",
-    "3476257542",
-    "3476238161",
-    "1806258974",  # WILL FAIL - NOT FOUND
-    "3476236157",
-    "3476230325",
-    "3476219849",
-    "1806256390",  # WILL FAIL - NOT FOUND
-    "3476207869",
-    "3476186295",
-]
-
 
 async def save_json(filename: str, data: dict, output_dir: Path):
     filepath = output_dir / filename
@@ -88,7 +71,7 @@ async def process_reference_number(browser, reference_number):
         timeout=settings.REQUEST_TIMEOUT_MS
     )
 
-    await page.wait_for_timeout(10000)
+    await page.wait_for_timeout(settings.PAGE_TIMEOUT_MS)
     await asyncio.gather(*tasks)
     await context.close()
 
@@ -121,7 +104,3 @@ async def process_start(ref_arr):
         output_dir = Path("output/")
         output_dir.mkdir(parents=True, exist_ok=True)
         return results
-
-
-if __name__ == "__main__":
-    asyncio.run(process_start(REFERENCE_NUMBERS))

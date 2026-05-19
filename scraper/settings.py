@@ -45,3 +45,10 @@ REQUEST_TIMEOUT_MS = int(
         "30000"
     )
 )
+
+PAGE_TIMEOUT_MS = int(
+    os.getenv(
+        "PAGE_TIMEOUT_MS",
+        "1000"
+    )
+)

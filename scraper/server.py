@@ -18,7 +18,6 @@ from models import (
 )
 from parser import parse_tracking_data
 from scraper import process_start  # type: ignore
-import asyncio
 
 
 async def get_shipment(reference_number: str) -> ShipmentTracking:
@@ -45,10 +44,3 @@ async def get_shipment(reference_number: str) -> ShipmentTracking:
         )
 
     return parse_tracking_data(shipment_data)
-
-if __name__ == "__main__":
-    ref_number = "1806290829"
-
-    shipment_info = asyncio.run(get_shipment(ref_number))
-
-    print(shipment_info.model_dump_json(indent=2))
